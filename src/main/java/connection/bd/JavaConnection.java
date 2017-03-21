@@ -43,7 +43,7 @@ public class JavaConnection {
 				cdr.setRing(resultado.getString(22));
 				
 				CDRlist.add(cdr);
-				
+				//guardado en lista
 			    //System.out.println("server "+resultado.getString(7)+ "\t Numero "+resultado.getString(8)+"\t duracion "+resultado.getString(21)+"\t ring "+resultado.getString(22));
 			   }
 			
@@ -91,6 +91,7 @@ public class JavaConnection {
 			
 		} catch (Exception e) {
 			System.out.println("ERRROR 404");
+			System.out.println(e.getMessage());
 		}
 		
 	}
