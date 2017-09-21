@@ -23,7 +23,7 @@ public class ServiceLoginJR {
 	public VOUsuario validaUsuario(VOUsuario vo){
 		
 		vo.setUserValido(false);
-		if (vo.getUsuario().equals("Java") && vo.getPassword().equals("Revolutions")) {
+		if (vo.getUsuario().equals("andres") && vo.getPassword().equals("perez")) {
 			vo.setUserValido(true);
 		}
 		

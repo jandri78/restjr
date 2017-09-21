@@ -18,7 +18,7 @@ public class JavaConnection {
 	
 	public List<VOCDR> conectadb(){
 	
-		String URL = "jdbc:mysql://10.170.0.231/cdr_sansay";
+		String URL = "jdbc:mysql://localhost/platziprofesores";
 	
 		List<VOCDR> CDRlist = new ArrayList<VOCDR>();
 		
@@ -26,10 +26,10 @@ public class JavaConnection {
 			System.out.println("intentando conectar");
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			Connection con=DriverManager.getConnection(URL, "consulta2", "Qu3ry");
+			Connection con=DriverManager.getConnection(URL, "platziprofesores", "platziprofesores");
 			System.out.println("conectado OK "+con);
 			
-			PreparedStatement consulta = con.prepareStatement("SELECT * FROM cdr_sansay.cdr_g4c limit 200;");
+			PreparedStatement consulta = con.prepareStatement("SELECT * FROM teacher");
 			
 			ResultSet resultado  = consulta.executeQuery();
 			
@@ -37,10 +37,10 @@ public class JavaConnection {
 				
 				VOCDR cdr = new VOCDR();
 				
-				cdr.setServer(resultado.getString(7));
-				cdr.setNumero(resultado.getString(8));
-				cdr.setDuracion(resultado.getString(21));
-				cdr.setRing(resultado.getString(22));
+				cdr.setServer(resultado.getString(1));
+				cdr.setNumero(resultado.getString(2));
+				cdr.setDuracion(resultado.getString(1));
+				cdr.setRing(resultado.getString(2));
 				
 				CDRlist.add(cdr);
 				//guardado en lista
@@ -63,23 +63,23 @@ public class JavaConnection {
 	
 	public  void conectadb2(){
 		
-		String URL = "jdbc:mysql://10.170.0.231/cdr_sansay";
+		String URL = "jdbc:mysql://localhost/platziprofesores";
 	
 		
 		try {
 			System.out.println("intentando conectar");
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			Connection con=DriverManager.getConnection(URL, "consulta2", "Qu3ry");
+			Connection con=DriverManager.getConnection(URL, "platziprofesores", "platziprofesores");
 			System.out.println("conectado OK "+con);
 			
-			PreparedStatement consulta = con.prepareStatement("SELECT * FROM cdr_sansay.cdr_g4c limit 200;");
+			PreparedStatement consulta = con.prepareStatement("SELECT * FROM teacher");
 			
 			ResultSet resultado  = consulta.executeQuery();
 			
 			while(resultado.next()){
 				
-				System.out.println("server "+resultado.getString(7)+ "\t Numero "+resultado.getString(8)+"\t duracion "+resultado.getString(21)+"\t ring "+resultado.getString(22));
+				System.out.println("server "+resultado.getString(1)+ "\t Numero "+resultado.getString(2)+"\t duracion "+resultado.getString(1)+"\t ring "+resultado.getString(2));
 			   
 			}
 			

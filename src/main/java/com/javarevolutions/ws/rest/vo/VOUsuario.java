@@ -12,7 +12,7 @@ public class VOUsuario {
 		this.usuario = usuario;
 	}
 	public String getPassword() {
-		return password + " hello from webservice";
+		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
